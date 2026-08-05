@@ -1,0 +1,34 @@
+# dependencies
+node_modules/
+
+# Next.js
+.next/
+out/
+
+# Payload
+media/
+src/payload-types.ts
+
+# environment
+.env
+.env.*
+!.env.example
+
+# tests and reports
+coverage/
+playwright-report/
+test-results/
+
+# tooling
+*.tsbuildinfo
+.eslintcache
+.pnpm-debug.log*
+npm-debug.log*
+
+# operating systems and editors
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
