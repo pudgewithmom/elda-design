@@ -71,6 +71,9 @@ Run `pnpm db:migrate` as a release step before starting a new application versio
 The `/api/health` endpoint checks the actual database connection and reports
 Telegram configuration readiness without exposing secret values.
 
+For a local production run, use `pnpm build && pnpm start`. The post-build step
+copies public and optimized static assets into the standalone server bundle.
+
 ## Structure
 
 ```text
