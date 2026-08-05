@@ -1,0 +1,85 @@
+.hero {
+  border-block: var(--line);
+}
+
+.statement {
+  display: grid;
+  grid-template-columns: minmax(0, 1.52fr) minmax(22rem, 1fr);
+  min-block-size: 15.75rem;
+}
+
+.titleWrap {
+  position: relative;
+  min-block-size: 18.5rem;
+  padding: 0.25rem var(--page-gutter) 1rem;
+}
+
+.title {
+  max-inline-size: 10ch;
+  font-size: clamp(3.5rem, 5.1vw, 4.375rem);
+  font-weight: 680;
+  letter-spacing: -0.065em;
+  line-height: 0.96;
+  text-transform: uppercase;
+}
+
+.script {
+  position: absolute;
+  z-index: 1;
+  inline-size: min(68%, 36.5625rem);
+  block-size: auto;
+  inset-block-start: 9.2rem;
+  inset-inline-start: 29%;
+}
+
+.description {
+  display: flex;
+  align-items: center;
+  border-inline-start: var(--line);
+  background: #050505;
+  color: #fff;
+  padding: clamp(2rem, 4.25vw, 3.875rem);
+}
+
+.description p {
+  max-inline-size: 28rem;
+  font-size: clamp(1rem, 1.6vw, 1.4375rem);
+  font-weight: 430;
+  letter-spacing: 0.095em;
+  line-height: 1.28;
+  text-transform: uppercase;
+}
+
+@media (width <= 56rem) {
+  .statement {
+    grid-template-columns: 1fr;
+  }
+
+  .description {
+    min-block-size: 14rem;
+    border-block-start: var(--line);
+    border-inline-start: 0;
+  }
+}
+
+@media (width <= 40rem) {
+  .titleWrap {
+    min-block-size: 14.5rem;
+    padding-block-start: 1rem;
+  }
+
+  .title {
+    font-size: clamp(2.75rem, 13.2vw, 4rem);
+  }
+
+  .script {
+    inline-size: 72%;
+    inset-block-start: 8.25rem;
+    inset-inline-start: 23%;
+  }
+
+  .description {
+    min-block-size: 11.5rem;
+    padding: var(--page-gutter);
+  }
+}

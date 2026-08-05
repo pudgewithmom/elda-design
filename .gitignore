@@ -18,6 +18,8 @@ src/payload-types.ts
 coverage/
 playwright-report/
 test-results/
+.playwright-cli/
+output/playwright/
 
 # tooling
 *.tsbuildinfo

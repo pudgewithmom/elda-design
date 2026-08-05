@@ -1,0 +1,124 @@
+.section {
+  padding: var(--section-space) var(--page-gutter) 0;
+}
+
+.banner {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 1340 / 369;
+  background: #080808;
+}
+
+.bannerImage {
+  object-fit: cover;
+}
+
+.banner p {
+  position: absolute;
+  z-index: 1;
+  max-inline-size: 15rem;
+  inset-block-start: 11%;
+  inset-inline-start: 20%;
+  color: #fff;
+  font-size: clamp(0.75rem, 1.4vw, 1.25rem);
+  font-weight: 750;
+  letter-spacing: 0.1em;
+  line-height: 1.25;
+  text-transform: uppercase;
+}
+
+.heading {
+  inline-size: min(63%, 52.8125rem);
+  margin-block-start: 1.875rem;
+}
+
+.heading img {
+  inline-size: 100%;
+  block-size: auto;
+}
+
+.intro {
+  margin-block-start: 0.5rem;
+  padding-block: 0.7rem;
+  border-block: var(--line);
+  font-size: clamp(0.875rem, 1.4vw, 1.25rem);
+  font-weight: 350;
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: minmax(0, 2.25fr) minmax(14rem, 1.2fr) minmax(20rem, 1.7fr);
+  gap: clamp(1.5rem, 4vw, 4.5rem);
+  padding-block: 1rem 5.5rem;
+}
+
+.stages {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-content: start;
+  gap: 1.5rem;
+}
+
+.stages h3 {
+  font-size: clamp(1.5rem, 2.2vw, 1.875rem);
+  font-weight: 520;
+  text-transform: uppercase;
+}
+
+.stages ol {
+  padding-inline-start: 1.2rem;
+  margin: 0;
+  font-size: clamp(0.875rem, 1.25vw, 1.125rem);
+  font-weight: 350;
+  line-height: 1.65;
+  text-transform: uppercase;
+}
+
+.description {
+  padding-block-start: 9.25rem;
+  border-block-start: var(--line);
+  font-size: clamp(0.875rem, 1.35vw, 1.25rem);
+  font-weight: 350;
+  line-height: 1.42;
+  text-transform: uppercase;
+}
+
+@media (width <= 56rem) {
+  .heading {
+    inline-size: 82%;
+  }
+
+  .content {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .content > :first-child {
+    display: none;
+  }
+}
+
+@media (width <= 40rem) {
+  .banner {
+    aspect-ratio: 1.35 / 1;
+  }
+
+  .banner p {
+    inset-block-start: 10%;
+    inset-inline-start: 8%;
+  }
+
+  .heading {
+    inline-size: 100%;
+  }
+
+  .content {
+    grid-template-columns: 1fr;
+    padding-block-end: 3.5rem;
+  }
+
+  .description {
+    padding-block-start: 1.5rem;
+  }
+}

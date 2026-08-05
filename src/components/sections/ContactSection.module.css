@@ -1,0 +1,190 @@
+.section {
+  padding: var(--section-space) var(--page-gutter) 2rem;
+}
+
+.frame {
+  position: relative;
+  border: var(--line);
+  padding-block-start: 5.75rem;
+}
+
+.date {
+  position: absolute;
+  display: flex;
+  inline-size: 36.8%;
+  min-block-size: 5.75rem;
+  align-items: flex-start;
+  padding: 0.6rem;
+  border-inline-end: var(--line);
+  border-block-end: var(--line);
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  font-size: 0.75rem;
+  font-weight: 520;
+}
+
+.heading {
+  position: absolute;
+  z-index: 2;
+  inline-size: min(62%, 51.6875rem);
+  inset-block-start: 0.5rem;
+  inset-inline-end: 0.75rem;
+}
+
+.heading img {
+  inline-size: 100%;
+  block-size: auto;
+}
+
+.body {
+  display: grid;
+  grid-template-columns: 36.8% 1fr;
+  min-block-size: 22.8125rem;
+}
+
+.visual {
+  position: relative;
+  overflow: hidden;
+  min-block-size: 22.8125rem;
+  border-inline-end: var(--line);
+}
+
+.contactImage {
+  object-fit: cover;
+}
+
+.content {
+  display: flex;
+  min-inline-size: 0;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: clamp(1.5rem, 3.4vw, 3.1rem) 0 0;
+}
+
+.copyGrid {
+  display: grid;
+  grid-template-columns: 1fr 0.9fr;
+  gap: 2rem;
+  padding-inline: clamp(1.25rem, 3.4vw, 3rem);
+}
+
+.copyGrid p {
+  font-size: clamp(0.875rem, 1.4vw, 1.25rem);
+  font-weight: 620;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.copyGrid p:last-child {
+  text-align: end;
+}
+
+.actions {
+  display: grid;
+  grid-template-columns: 1.35fr 0.85fr;
+  gap: clamp(1.25rem, 3vw, 3rem);
+  align-items: end;
+  padding-inline: clamp(1.25rem, 3.4vw, 3rem) 0;
+}
+
+.contacts {
+  display: grid;
+  align-content: end;
+  margin: 0;
+  font-style: normal;
+}
+
+.contactRow {
+  display: flex;
+  min-block-size: 3rem;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  padding-inline-end: 0.75rem;
+  border-block-end: var(--line);
+  font-size: clamp(0.75rem, 1.25vw, 1.125rem);
+  font-weight: 620;
+  text-transform: uppercase;
+}
+
+.contactRow img {
+  flex: 0 0 auto;
+}
+
+.motto {
+  position: absolute;
+  inset-block-end: 1.1rem;
+  inset-inline-start: 10.5%;
+  color: var(--color-accent);
+  font-size: 0.72rem;
+  font-weight: 550;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+@media (width <= 62rem) {
+  .frame {
+    padding-block-start: 5rem;
+  }
+
+  .heading {
+    inline-size: 64%;
+  }
+
+  .body {
+    grid-template-columns: 1fr;
+  }
+
+  .visual {
+    min-block-size: 23rem;
+    border-inline-end: 0;
+    border-block-end: var(--line);
+  }
+
+  .actions {
+    grid-template-columns: 1fr;
+    padding: 2rem;
+  }
+
+  .contactRow {
+    padding-inline: 0;
+  }
+
+  .motto {
+    display: none;
+  }
+}
+
+@media (width <= 40rem) {
+  .section {
+    padding-inline: 0;
+    padding-block-end: 0;
+  }
+
+  .frame {
+    border-inline: 0;
+    padding-block-start: 6.5rem;
+  }
+
+  .date {
+    inline-size: 40%;
+    min-block-size: 4rem;
+  }
+
+  .heading {
+    inline-size: calc(100% - 1.5rem);
+    inset-block-start: 2.2rem;
+  }
+
+  .copyGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .copyGrid p:last-child {
+    text-align: start;
+  }
+
+  .actions {
+    padding-inline: 1.25rem;
+  }
+}

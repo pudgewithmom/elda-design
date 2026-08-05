@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next'
 import type { ReactNode } from 'react'
 
 import { getSiteUrl, siteConfig } from '@/lib/site'
+import '@fontsource-variable/onest'
 import '@/styles/globals.css'
 
 export const metadata: Metadata = {
@@ -15,6 +16,7 @@ export const metadata: Metadata = {
   category: 'design',
   creator: siteConfig.name,
   publisher: siteConfig.name,
+  icons: { icon: '/assets/home/logo.svg' },
   formatDetection: { address: false, email: false, telephone: false },
 }
 

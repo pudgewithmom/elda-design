@@ -12,12 +12,14 @@ const securityHeaders = [
 ]
 
 const nextConfig: NextConfig = {
+  agentRules: false,
+  allowedDevOrigins: ['127.0.0.1'],
   poweredByHeader: false,
   reactStrictMode: true,
   output: 'standalone',
   images: {
     formats: ['image/avif', 'image/webp'],
-    localPatterns: [{ pathname: '/api/media/file/**' }],
+    localPatterns: [{ pathname: '/api/media/file/**' }, { pathname: '/assets/**' }],
   },
   async headers() {
     return [{ source: '/(.*)', headers: securityHeaders }]

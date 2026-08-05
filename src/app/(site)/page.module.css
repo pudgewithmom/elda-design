@@ -1,31 +1,5 @@
-.main {
-  display: grid;
-  min-block-size: 100svh;
-  align-content: center;
-  gap: var(--space-5);
-  inline-size: min(100% - (2 * var(--page-gutter)), var(--content-max));
+.page {
+  inline-size: min(100%, var(--site-max));
   margin-inline: auto;
-}
-
-.eyebrow {
-  color: var(--color-accent);
-  font-size: var(--font-size-sm);
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-.title {
-  max-inline-size: 16ch;
-  font-size: clamp(2.75rem, 8vw, 7rem);
-  font-weight: 700;
-  letter-spacing: -0.055em;
-  line-height: 0.92;
-  text-transform: uppercase;
-}
-
-.copy {
-  max-inline-size: 48rem;
-  font-size: clamp(1rem, 1.5vw, 1.25rem);
-  line-height: 1.5;
+  overflow: clip;
 }
