@@ -10,7 +10,7 @@
 
 .titleWrap {
   position: relative;
-  min-block-size: 18.5rem;
+  min-block-size: 15.75rem;
   padding: 0.25rem var(--page-gutter) 1rem;
 }
 
@@ -28,7 +28,7 @@
   z-index: 1;
   inline-size: min(68%, 36.5625rem);
   block-size: auto;
-  inset-block-start: 9.2rem;
+  inset-block-start: 8.1rem;
   inset-inline-start: 29%;
 }
 
