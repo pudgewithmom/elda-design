@@ -14,6 +14,7 @@ import { SiteSettings } from '@/payload/globals/SiteSettings'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
+const migrationDir = process.env.PAYLOAD_MIGRATION_DIR || path.resolve(dirname, 'migrations')
 
 export default buildConfig({
   admin: {
@@ -26,6 +27,7 @@ export default buildConfig({
   collections: [Users, Media, Cases, Services, Leads],
   globals: [SiteSettings],
   db: postgresAdapter({
+    migrationDir,
     pool: { connectionString: process.env.DATABASE_URL ?? '' },
   }),
   editor: lexicalEditor(),

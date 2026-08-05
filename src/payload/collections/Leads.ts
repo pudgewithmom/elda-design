@@ -20,6 +20,7 @@ const notifyManagers: CollectionAfterChangeHook = async ({ doc, operation, req }
     await req.payload.update({
       collection: 'leads',
       id: doc.id,
+      req,
       data: {
         telegramNotificationStatus: result.skipped ? 'skipped' : 'sent',
         telegramNotifiedAt: result.skipped ? undefined : new Date().toISOString(),
@@ -32,6 +33,7 @@ const notifyManagers: CollectionAfterChangeHook = async ({ doc, operation, req }
     await req.payload.update({
       collection: 'leads',
       id: doc.id,
+      req,
       data: {
         telegramNotificationStatus: 'failed',
         telegramNotificationError: message.slice(0, 500),
@@ -114,7 +116,10 @@ export const Leads: CollectionConfig = {
     {
       name: 'telegramNotificationError',
       type: 'textarea',
-      admin: { readOnly: true, condition: (_, data) => data.telegramNotificationStatus === 'failed' },
+      admin: {
+        readOnly: true,
+        condition: (_, data) => data.telegramNotificationStatus === 'failed',
+      },
     },
   ],
 }

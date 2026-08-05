@@ -12,6 +12,20 @@ jobs:
   quality:
     runs-on: ubuntu-latest
     timeout-minutes: 20
+    services:
+      postgres:
+        image: postgres:17-alpine
+        env:
+          POSTGRES_DB: elda
+          POSTGRES_USER: elda
+          POSTGRES_PASSWORD: elda
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U elda -d elda"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
     env:
       DATABASE_URL: postgresql://elda:elda@localhost:5432/elda
       NEXT_PUBLIC_SITE_URL: http://localhost:3000
@@ -26,6 +40,8 @@ jobs:
       - run: pnpm install --frozen-lockfile
       - run: pnpm generate:types
       - run: pnpm generate:importmap
+      - run: pnpm db:migrate
+      - run: pnpm infra:check
       - run: pnpm lint
       - run: pnpm lint:styles
       - run: pnpm typecheck

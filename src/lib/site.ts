@@ -1,8 +1,7 @@
 export const siteConfig = {
   name: "EL'DA Design",
   shortName: "EL'DA",
-  description:
-    'Дизайн-студия: UX/UI, веб-дизайн, графический дизайн, продвижение и motion.',
+  description: 'Дизайн-студия: UX/UI, веб-дизайн, графический дизайн, продвижение и motion.',
   locale: 'ru_RU',
   language: 'ru',
   email: 'hello_elda@yandex.ru',

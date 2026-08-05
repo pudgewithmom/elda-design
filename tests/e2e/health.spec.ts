@@ -4,5 +4,11 @@ test('health endpoint is available', async ({ request }) => {
   const response = await request.get('/api/health')
 
   expect(response.ok()).toBe(true)
-  await expect(response.json()).resolves.toMatchObject({ status: 'ok', service: 'elda-design' })
+  const body = await response.json()
+
+  expect(['ok', 'degraded']).toContain(body.status)
+  expect(body).toMatchObject({
+    service: 'elda-design',
+    checks: { database: { status: 'up' } },
+  })
 })

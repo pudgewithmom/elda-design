@@ -5,7 +5,7 @@
   "type": "module",
   "packageManager": "pnpm@11.9.0",
   "engines": {
-    "node": ">=20.9.0",
+    "node": ">=24.0.0",
     "pnpm": ">=9"
   },
   "scripts": {
@@ -21,6 +21,15 @@
     "test:unit": "vitest run",
     "test:e2e": "playwright test",
     "check": "pnpm lint && pnpm lint:styles && pnpm typecheck && pnpm test:unit && pnpm build",
+    "db:start": "docker compose up -d postgres",
+    "db:stop": "docker compose stop postgres",
+    "db:status": "docker compose ps postgres",
+    "db:migrate": "payload migrate",
+    "db:migrate:status": "payload migrate:status",
+    "infra:check": "cross-env TELEGRAM_NOTIFICATIONS_DISABLED=true node --env-file-if-exists=.env --import tsx scripts/check-infrastructure.ts",
+    "telegram:discover": "node --env-file-if-exists=.env --import tsx scripts/discover-telegram-chats.ts",
+    "telegram:check": "node --env-file-if-exists=.env --import tsx scripts/check-telegram.ts",
+    "telegram:test": "node --env-file-if-exists=.env --import tsx scripts/check-telegram.ts --send-test",
     "payload": "payload",
     "generate:types": "payload generate:types",
     "generate:importmap": "payload generate:importmap"
