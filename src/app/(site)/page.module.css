@@ -1,5 +1,4 @@
 .page {
-  inline-size: min(100%, var(--site-max));
-  margin-inline: auto;
+  inline-size: 100%;
   overflow: clip;
 }

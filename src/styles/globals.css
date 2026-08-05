@@ -43,7 +43,6 @@
     --color-surface: #efefef;
     --color-line: #111;
     --font-sans: 'Onest Variable', 'Onest', arial, sans-serif;
-    --site-max: 90rem;
     --content-max: 83.75rem;
     --page-gutter: clamp(0.875rem, 3.5vw, 3.125rem);
     --section-space: clamp(4.5rem, 10vw, 8.5rem);
