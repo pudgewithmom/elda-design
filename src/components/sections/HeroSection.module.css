@@ -21,6 +21,18 @@
   text-transform: uppercase;
 }
 
+.titleLine {
+  display: block;
+}
+
+.titleLine:first-child {
+  transform: translateY(-0.15em);
+}
+
+.titleLine:last-child {
+  transform: translateY(0.3em);
+}
+
 .script {
   position: absolute;
   z-index: 1;

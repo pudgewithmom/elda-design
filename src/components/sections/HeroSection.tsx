@@ -10,9 +10,9 @@ export function HeroSection() {
       <div className={styles.statement}>
         <Reveal className={styles.titleWrap}>
           <h1 id="hero-title" className={styles.title}>
-            Дизайн,
-            <br />
-            работающий на ваш
+            <span className={styles.titleLine}>Дизайн,</span>{' '}
+            <span className={styles.titleLine}>работающий</span>{' '}
+            <span className={styles.titleLine}>на ваш</span>
           </h1>
           <Image
             src="/assets/home/hero-script-business.svg"
