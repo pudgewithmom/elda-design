@@ -5,13 +5,11 @@
 .statement {
   display: grid;
   grid-template-columns: minmax(0, 1.52fr) minmax(22rem, 1fr);
-  min-block-size: 15.75rem;
 }
 
 .titleWrap {
   position: relative;
-  min-block-size: 15.75rem;
-  padding: 0.25rem var(--page-gutter) 1rem;
+  padding: 0.25rem var(--page-gutter);
 }
 
 .title {
@@ -28,7 +26,7 @@
   z-index: 1;
   inline-size: min(68%, 36.5625rem);
   block-size: auto;
-  inset-block-start: 8.1rem;
+  inset-block-start: 5.9rem;
   inset-inline-start: 29%;
 }
 
@@ -38,7 +36,8 @@
   border-inline-start: var(--line);
   background: #050505;
   color: #fff;
-  padding: clamp(2rem, 4.25vw, 3.875rem);
+  padding-block: 1.875rem;
+  padding-inline: clamp(2rem, 4.25vw, 3.875rem);
 }
 
 .description p {
