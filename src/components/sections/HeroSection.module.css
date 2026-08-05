@@ -1,14 +1,18 @@
 .hero {
+  block-size: 15.6875rem;
   border-block: var(--line);
 }
 
 .statement {
   display: grid;
+  block-size: 100%;
   grid-template-columns: minmax(0, 1.52fr) minmax(22rem, 1fr);
+  grid-template-rows: minmax(0, 1fr);
 }
 
 .titleWrap {
   position: relative;
+  min-block-size: 0;
   padding: 0.25rem var(--page-gutter);
 }
 
@@ -19,18 +23,11 @@
   letter-spacing: -0.065em;
   line-height: 1.293;
   text-transform: uppercase;
+  transform: translateY(-0.15em);
 }
 
 .titleLine {
   display: block;
-}
-
-.titleLine:first-child {
-  transform: translateY(-0.15em);
-}
-
-.titleLine:last-child {
-  transform: translateY(0.3em);
 }
 
 .script {
@@ -44,6 +41,7 @@
 
 .description {
   display: flex;
+  min-block-size: 0;
   align-items: center;
   border-inline-start: var(--line);
   background: #050505;
@@ -62,7 +60,12 @@
 }
 
 @media (width <= 56rem) {
+  .hero {
+    block-size: auto;
+  }
+
   .statement {
+    block-size: auto;
     grid-template-columns: 1fr;
   }
 
